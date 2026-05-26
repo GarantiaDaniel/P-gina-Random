@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Random</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 600px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        button {
+            background: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #764ba2;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        #fact {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📚 Dato Random</h1>
+        <p id="fact">Cargando...</p>
+        <button onclick="nuevoDato()">🔁 Otro dato</button>
+    </div>
+
+    <script>
+        const datos = [
+            "Los pulpos tienen tres corazones.",
+            "Las huellas dactilares de los koalas son casi iguales a las humanas.",
+            "El corazón de un camarón está en su cabeza.",
+            "Walt Disney tenía miedo a los ratones.",
+            "Existe una calle llamada 'Calle de la Amargura' en Ciudad de México.",
+            "El 'no' de una cabra suena idéntico al de un humano.",
+            "Los plátanos son berries, pero las fresas no.",
+            "Puedes escuchar el latido de una ballena azul a 3 km de distancia.",
+            "El celular tiene más bacterias que el inodoro.",
+            "Algunos gatos son alérgicos a los humanos."
+        ];
+
+        function nuevoDato() {
+            const indice = Math.floor(Math.random() * datos.length);
+            document.getElementById("fact").textContent = datos[indice];
+        }
+
+        // Mostrar uno al cargar
+        nuevoDato();
+    </script>
+</body>
+</html>
